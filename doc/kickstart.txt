@@ -13,8 +13,8 @@ It is:
 - Somewhere that has a good start for the most common "IDE" type features:
     - autocompletion
     - goto-definition
-    - find references
-    - fuzzy finding
+    :q
+
     - and hinting at what more can be done :)
 - A place to _kickstart_ your journey.
     - You should fork this project and use/modify it so that it matches your
