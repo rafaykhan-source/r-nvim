@@ -33,10 +33,6 @@ Kickstart Guide:
     MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
     which is very useful when you're not exactly sure of what you're looking for.
 
-  I have left several `:help X` comments throughout the init.lua
-    These are hints about where to find more information about the relevant settings,
-    plugins or Neovim features used in Kickstart.
-
 If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
 --]]
 
@@ -54,11 +50,11 @@ vim.g.have_nerd_font = true
 -- NOTE: You can change these options as you wish!
 --  For more options, you can see `:help option-list`
 
-vim.opt.cursorline = true
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.scrolloff = 20
-vim.opt.textwidth = 88
+vim.opt.cursorline = true -- highlight line cursor is on
+vim.opt.number = true -- show line numbers
+vim.opt.relativenumber = true -- use relative line numbers
+vim.opt.scrolloff = 20 -- fix 20 lines to top and bottom
+vim.opt.textwidth = 80 -- limit number of characters per line
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = 'a'
@@ -77,10 +73,9 @@ end)
 -- Enable break indent
 vim.opt.breakindent = true
 
--- Save undo history
-vim.opt.undofile = true
-vim.opt.backup = false
-vim.opt.swapfile = false
+vim.opt.undofile = true -- save undo history
+vim.opt.backup = false -- disable backup files
+vim.opt.swapfile = false -- disable swap files
 
 -- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
 vim.opt.ignorecase = true
@@ -146,7 +141,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 --  Try it with `yap` in normal mode
 --  See `:help vim.highlight.on_yank()`
 vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
+  desc = 'Highlight when yanking text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
   callback = function()
     vim.highlight.on_yank()
@@ -210,6 +205,8 @@ require('lazy').setup({
       signs_staged_enable = true,
     },
   },
+  -- Highlight todo, notes, etc in comments
+  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
   {
     'danymat/neogen',
     config = true,
@@ -399,6 +396,11 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
+
+      -- Shortcut for searching through my notes
+      vim.keymap.set('n', '<leader>sb', function()
+        builtin.find_files { cwd = '~/Projects/blog' }
+      end, { desc = '[S]earch [B]log files' })
     end,
   },
 
@@ -578,6 +580,7 @@ require('lazy').setup({
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         ruff = {},
+        pyright = {},
         marksman = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -790,9 +793,6 @@ require('lazy').setup({
       vim.cmd.hi 'Comment gui=none'
     end,
   },
-
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
