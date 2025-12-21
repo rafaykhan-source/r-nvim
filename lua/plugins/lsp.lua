@@ -2,13 +2,6 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
     vim.lsp.enable('marksman')
-    vim.lsp.config('ruff', {
-      init_options = {
-        settings = {
-          -- Server settings should go here
-        }
-      }
-    })
     vim.lsp.enable('ruff')
     vim.lsp.config('lua_ls', {
       on_init = function(client)
