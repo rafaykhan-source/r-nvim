@@ -20,11 +20,11 @@ vim.keymap.set("n", "<C-h>", "<C-w><left>")
 vim.keymap.set("n", "<C-l>", "<C-w><right>")
 
 vim.api.nvim_create_autocmd('TextYankPost', {
-    desc = 'Highlight Yanked Text',
-    group = vim.api.nvim_create_augroup('highlight', { clear = true }),
-    callback = function()
-        vim.hl.on_yank()
-    end,
+  desc = 'Highlight Yanked Text',
+  group = vim.api.nvim_create_augroup('highlight', { clear = true }),
+  callback = function()
+    vim.hl.on_yank()
+  end,
 })
 
 -- vim.pack.add({
