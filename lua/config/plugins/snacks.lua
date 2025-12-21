@@ -22,10 +22,10 @@ return {
     -- words = { enabled = true },
   },
   keys = {
-    { "<leader><space>", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
+    { "<leader>f", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
-    { "<leader>e", function() Snacks.explorer() end, desc = "File Explorer" },
+    { "<leader>-", function() Snacks.explorer() end, desc = "File Explorer" },
     { "<leader>g", function() Snacks.lazygit() end, desc = "LazyGit" },
   },
 }

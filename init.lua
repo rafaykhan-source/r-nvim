@@ -11,6 +11,7 @@ require('config.lazy')
 vim.keymap.set("n", "<leader>s", ":source %<CR>")
 vim.keymap.set("v", "<leader>x", ":lua<CR>")
 vim.keymap.set("n", "<leader>t", ":terminal<CR>")
+vim.keymap.set("n", "<leader>\\", ":vsplit<CR>")
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>")
 
 
