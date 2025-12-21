@@ -9,7 +9,7 @@ return {
     -- refer to the configuration section below
     -- bigfile = { enabled = true },
     -- dashboard = { enabled = true },
-    explorer = { enabled = true, replace_netrw = true, trash = true },
+    explorer = { enabled = true, replae_netrw = true, trash = true },
     lazygit = { enabled = true },
     -- indent = { enabled = true },
     -- input = { enabled = true },
@@ -25,7 +25,7 @@ return {
     { "<leader>f", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "<leader>/", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
-    { "<leader>-", function() Snacks.explorer() end, desc = "File Explorer" },
     { "<leader>g", function() Snacks.lazygit() end, desc = "LazyGit" },
+    { "<leader>-", function() Snacks.explorer() end, desc = "Explorer" },
   },
 }
