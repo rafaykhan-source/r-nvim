@@ -1,9 +1,10 @@
-vim.o.number = true
-vim.o.relativenumber = true
-vim.o.shiftwidth = 4
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.clipboard = "unnamedplus"
+vim.opt.number = true
+vim.opt.relativenumber = true
+vim.opt.shiftwidth = 4
+vim.opt.scrolloff = 8
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+vim.opt.clipboard = "unnamedplus"
 
 require('config.lazy')
 
