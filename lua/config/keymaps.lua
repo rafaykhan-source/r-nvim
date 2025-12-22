@@ -1,5 +1,7 @@
 -- :so % (source current file)
+vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>s", ":source %<CR>")
+vim.keymap.set("n", "<leader>q", function() vim.diagnostic.setloclist() end)
 vim.keymap.set("v", "<leader>x", ":lua<CR>")
 vim.keymap.set("n", "<leader>\\", ":vnew<CR>")
 vim.keymap.set("n", "<leader>l", ":Lazy<CR>")

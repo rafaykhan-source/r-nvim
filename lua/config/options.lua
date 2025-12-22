@@ -15,4 +15,5 @@ vim.opt.wrap = false
 vim.opt.list = true
 vim.opt.splitbelow = true
 vim.opt.splitright = true
--- vim.opt.showmode = true (using mini.statusline)
+vim.opt.showmode = false
+vim.opt.undofile = true
