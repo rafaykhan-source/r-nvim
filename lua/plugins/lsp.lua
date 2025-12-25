@@ -1,8 +1,21 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    vim.lsp.enable('marksman')
+    -- Bash
+    vim.lsp.enable('bashls')
+    -- Python
     vim.lsp.enable('ruff')
+    vim.lsp.enable('ty')
+
+    -- Web Development
+    vim.lsp.enable('ts_ls')
+    vim.lsp.enable('eslint')
+    vim.lsp.enable('tailwindcss')
+
+    -- Markdown
+    vim.lsp.enable('marksman')
+
+    -- Lua
     vim.lsp.config('lua_ls', {
       on_init = function(client)
         if client.workspace_folders then
