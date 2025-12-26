@@ -15,6 +15,9 @@ return {
     -- Markdown
     vim.lsp.enable('marksman')
 
+    -- Toml
+    vim.lsp.enable('taplo')
+
     -- Lua
     vim.lsp.config('lua_ls', {
       on_init = function(client)
