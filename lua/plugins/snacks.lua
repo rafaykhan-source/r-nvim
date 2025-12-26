@@ -25,6 +25,7 @@ return {
     { "<leader>f", function() Snacks.picker.smart() end,   desc = "Smart Find Files" },
     { "<leader>/", function() Snacks.picker.grep() end,    desc = "Grep" },
     { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>c", function() Snacks.picker.colorschemes() end, desc = "[C]olorschemes" },
     { "<leader>g", function() Snacks.lazygit() end,        desc = "LazyGit" },
     { "<leader>e", function() Snacks.explorer() end,       desc = "Explorer" },
   },
