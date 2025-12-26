@@ -26,6 +26,7 @@ return {
     { "<leader>/", function() Snacks.picker.grep() end,    desc = "Grep" },
     { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
     { "<leader>c", function() Snacks.picker.colorschemes() end, desc = "[C]olorschemes" },
+    { "<leader>u", function() Snacks.picker.undo() end, desc = "[U]ndo" },
     { "<leader>g", function() Snacks.lazygit() end,        desc = "LazyGit" },
     { "<leader>e", function() Snacks.explorer() end,       desc = "Explorer" },
   },
