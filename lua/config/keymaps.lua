@@ -9,11 +9,11 @@ vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
 
 vim.keymap.set("n", "<leader>s", ":source %<CR>", { desc = "[S]ource Buffer" })
 vim.keymap.set("n", "<leader>l", ":Lazy update<CR>", { desc = "[L]azy Update" })
-vim.keymap.set("n", "<leader>q",
+vim.keymap.set("n", "<leader>d",
   function()
     vim.diagnostic.setloclist()
   end,
-  { desc = "[Q]uick Diagnostic List" }
+  { desc = "[D]iagnostic List" }
 )
 vim.keymap.set("n", "<leader>\\",
   function()
