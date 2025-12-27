@@ -3,7 +3,4 @@ return {
   lazy = false,
   dependencies = { "MunifTanjim/nui.nvim" },
   opts = {},
-  keys = {
-    { "<leader>h", ":Hardtime toggle<CR>", desc = "Toggle [H]ardtime" },
-  },
 }
