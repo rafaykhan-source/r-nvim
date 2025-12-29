@@ -24,7 +24,7 @@ vim.keymap.set("n", "<leader>\\",
 vim.keymap.set("n", "<leader>w",
   function()
     vim.lsp.buf.format()
-    vim.cmd.update()
+    vim.cmd.write()
   end,
   { desc = "[W]rite and Format file" }
 )
