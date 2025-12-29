@@ -11,6 +11,7 @@ return {
     vim.lsp.enable('ts_ls')
     vim.lsp.enable('eslint')
     vim.lsp.enable('tailwindcss')
+    vim.lsp.enable('svelte')
 
     -- Markdown
     vim.lsp.enable('marksman')
