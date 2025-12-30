@@ -29,6 +29,7 @@ vim.keymap.set("n", "<leader>w",
   { desc = "[W]rite and Format file" }
 )
 
+vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
 vim.keymap.set("n", "<leader>t",
   function()
     vim.cmd.vnew()
