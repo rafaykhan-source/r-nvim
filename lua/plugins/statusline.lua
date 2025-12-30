@@ -1,8 +1,5 @@
 return {
-  'nvim-mini/mini.statusline',
-  version = false,
-  enabled = true,
-  config = function()
-    require('mini.statusline').setup()
-  end
+  { 'nvim-mini/mini.statusline',  version = false },
+  { "nvim-tree/nvim-web-devicons" },
+  { "nvim-mini/mini.icons",       version = "*" },
 }
