@@ -12,7 +12,7 @@ return {
           auto_close = true,
           hidden = true,
           ignored = true,
-          exclude = { ".git" }
+          exclude = { ".git/*", "node_modules/*" },
         }
       }
 
