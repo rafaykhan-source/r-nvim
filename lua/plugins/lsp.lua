@@ -15,6 +15,7 @@ return {
 
     -- Markdown
     vim.lsp.enable('marksman')
+    vim.lsp.enable('rumdl')
 
     -- Toml
     vim.lsp.enable('taplo')

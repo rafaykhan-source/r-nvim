@@ -1,12 +1,14 @@
 # My Neovim Configuration
 
-I developed this configuration as I was watching through tjdevries's [advent of neovim series](https://github.com/tjdevries/advent-of-nvim).
+I developed this configuration as I was watching through tjdevries's
+[advent of neovim series](https://github.com/tjdevries/advent-of-nvim).
 
-# LSP Setup Commands
+## LSP Setup Commands
 
 ```bash
 uv tool install ruff
 uv tool install ty
+uv tool install rumdl
 
 npm i -g svelte-language-server
 npm i -g @tailwindcss/language-server
