@@ -2,59 +2,60 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
     -- Bash
-    vim.lsp.enable('bashls')
+    vim.lsp.enable("bashls")
     -- Python
-    vim.lsp.enable('ruff')
-    vim.lsp.enable('ty')
+    vim.lsp.enable("ruff")
+    vim.lsp.enable("ty")
 
     -- Web Development
-    vim.lsp.enable('ts_ls')
-    vim.lsp.enable('eslint')
-    vim.lsp.enable('tailwindcss')
-    vim.lsp.enable('svelte')
+    vim.lsp.enable("ts_ls")
+    vim.lsp.enable("eslint")
+    vim.lsp.enable("tailwindcss")
+    vim.lsp.enable("svelte")
 
-    -- Markdown
-    vim.lsp.enable('marksman')
-    vim.lsp.enable('rumdl')
+    -- Markdown & Latex
+    vim.lsp.enable("marksman")
+    vim.lsp.enable("rumdl")
+    vim.lsp.enable("texlab")
 
     -- Toml
-    vim.lsp.enable('taplo')
+    vim.lsp.enable("taplo")
 
     -- Lua
-    vim.lsp.config('lua_ls', {
+    vim.lsp.config("lua_ls", {
       on_init = function(client)
         if client.workspace_folders then
           local path = client.workspace_folders[1].name
           if
-              path ~= vim.fn.stdpath('config')
-              and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+            path ~= vim.fn.stdpath("config")
+            and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
           then
             return
           end
         end
 
-        client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+        client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
           runtime = {
             -- Tell the language server which version of Lua you're using (most
             -- likely LuaJIT in the case of Neovim)
-            version = 'LuaJIT',
+            version = "LuaJIT",
             -- Tell the language server how to find Lua modules same way as Neovim
             -- (see `:h lua-module-load`)
             path = {
-              'lua/?.lua',
-              'lua/?/init.lua',
+              "lua/?.lua",
+              "lua/?/init.lua",
             },
           },
           -- Make the server aware of Neovim runtime files
           workspace = {
             checkThirdParty = false,
             library = {
-              vim.env.VIMRUNTIME
+              vim.env.VIMRUNTIME,
               -- Depending on the usage, you might want to add additional paths
               -- here.
               -- '${3rd}/luv/library'
               -- '${3rd}/busted/library'
-            }
+            },
             -- Or pull in all of 'runtimepath'.
             -- NOTE: this is a lot slower and will cause issues when working on
             -- your own configuration.
@@ -62,7 +63,7 @@ return {
             -- library = {
             --   vim.api.nvim_get_runtime_file('', true),
             -- }
-          }
+          },
         })
       end,
       settings = {
@@ -74,11 +75,11 @@ return {
             defaultConfig = {
               indent_style = "space",
               indent_size = "2",
-            }
+            },
           },
         },
-      }
+      },
     })
-    vim.lsp.enable('lua_ls')
+    vim.lsp.enable("lua_ls")
   end,
 }

@@ -4,6 +4,6 @@ return {
   enabled = true,
   opts = {
     auto_integrations = true,
-    no_italic = true
+    no_italic = true,
   },
 }

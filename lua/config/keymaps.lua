@@ -7,39 +7,24 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<Esc>", ":nohlsearch<CR>")
 
-vim.keymap.set("n", "<leader>s", ":source %<CR>", { desc = "[S]ource Buffer" })
+vim.keymap.set("n", "<leader>x", ":source %<CR>", { desc = "E[x]ecute Buffer" })
 vim.keymap.set("n", "<leader>l", ":Lazy update<CR>", { desc = "[L]azy Update" })
-vim.keymap.set("n", "<leader>d",
-  function()
-    vim.diagnostic.setloclist()
-  end,
-  { desc = "[D]iagnostic List" }
-)
-vim.keymap.set("n", "<leader>\\",
-  function()
-    vim.cmd.vnew()
-  end,
-  { desc = "New Split" }
-)
-vim.keymap.set("n", "<leader>w",
-  function()
-    vim.lsp.buf.format()
-    vim.cmd.write()
-  end,
-  { desc = "[W]rite and Format file" }
-)
+vim.keymap.set("n", "<leader>d", function()
+  vim.diagnostic.setloclist()
+end, { desc = "[D]iagnostic List" })
+vim.keymap.set("n", "<leader>\\", function()
+  vim.cmd.vnew()
+end, { desc = "New Split" })
+vim.keymap.set("n", "<leader>w", function()
+  -- vim.lsp.buf.format()
+  vim.cmd.write()
+end, { desc = "[W]rite and Format file" })
 
-vim.keymap.set("n", "<leader>q",
-  ":qa!<CR>",
-  { desc = "Force [Q]uit" }
-)
+vim.keymap.set("n", "<leader>q", ":qa!<CR>", { desc = "Force [Q]uit" })
 
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit Terminal Mode" })
-vim.keymap.set("n", "<leader>t",
-  function()
-    vim.cmd.write()
-    vim.cmd.vnew()
-    vim.cmd.terminal()
-  end,
-  { desc = "[T]erminal" }
-)
+vim.keymap.set("n", "<leader>t", function()
+  vim.cmd.write()
+  vim.cmd.vnew()
+  vim.cmd.terminal()
+end, { desc = "[T]erminal" })

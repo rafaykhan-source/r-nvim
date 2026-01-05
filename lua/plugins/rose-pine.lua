@@ -1,5 +1,5 @@
 return {
   "rose-pine/neovim",
-  name = 'rose-pine',
+  name = "rose-pine",
   enabled = true,
 }
