@@ -15,7 +15,6 @@ return {
       toml = { "taplo" },
       bash = { "shellcheck" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
-      ["*"] = { "codespell" },
     },
     -- Set up format-on-save
     format_on_save = { timeout_ms = 1000, lsp_format = "never" },

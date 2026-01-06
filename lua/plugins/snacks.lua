@@ -12,7 +12,7 @@ return {
           auto_close = true,
           hidden = true,
           ignored = true,
-          exclude = { ".git/*", "node_modules/*" },
+          exclude = { ".git/*", "node_modules/*", ".venv/*", "**/__pycache__/*", "build/*", ".DS_Store" },
         },
       },
     },
@@ -49,7 +49,7 @@ return {
       function()
         Snacks.picker.buffers()
       end,
-      desc = "[B]uffers",
+      desc = "[B]buffers",
     },
     {
       "<leader>h",
@@ -63,7 +63,7 @@ return {
       function()
         Snacks.picker.notifications()
       end,
-      desc = "[N]otifications",
+      desc = "[N]notifications",
     },
     {
       "<leader>gl",
