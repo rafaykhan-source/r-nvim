@@ -3,6 +3,12 @@
 I developed this configuration as I was watching through tjdevries's
 [advent of neovim series](https://github.com/tjdevries/advent-of-nvim).
 
+## Neovim Installation
+
+```bash
+npm i -g tree-sitter-cli
+```
+
 ## LSP Setup Commands
 
 ```bash
@@ -18,6 +24,8 @@ npm i -g typescript typescript-language-server
 npm i -g bash-language-server
 
 # install texlab
+# install marksman
+# install lua-language-server
 ```
 
 ## Conform Setup Commands
