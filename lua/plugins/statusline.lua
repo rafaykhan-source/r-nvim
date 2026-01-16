@@ -6,6 +6,6 @@ return {
       require("mini.statusline").setup()
     end,
   },
-  { "nvim-tree/nvim-web-devicons" },
   { "nvim-mini/mini.icons", version = "*" },
+  -- { "nvim-tree/nvim-web-devicons" },
 }

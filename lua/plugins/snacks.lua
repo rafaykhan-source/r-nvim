@@ -4,7 +4,6 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
-    explorer = { enabled = true, trash = true },
     picker = {
       enabled = true,
       sources = {
@@ -23,13 +22,6 @@ return {
   },
 
   keys = {
-    {
-      "<leader>e",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "[E]xplorer",
-    },
     {
       "<leader>f",
       function()
