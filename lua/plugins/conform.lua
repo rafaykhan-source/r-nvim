@@ -15,9 +15,11 @@ return {
       toml = { "taplo" },
       bash = { "shellcheck" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
+      typescript = { "prettierd", "prettier", stop_after_first = true },
+      svelte = { "prettierd", "prettier", stop_after_first = true },
     },
     -- Set up format-on-save
-    format_on_save = { timeout_ms = 1000, lsp_format = "never" },
+    format_on_save = { timeout_ms = 2500, lsp_format = "never" },
     notify_on_error = true,
   },
 }
