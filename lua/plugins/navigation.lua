@@ -11,6 +11,7 @@ return {
         use_as_default_explorer = true,
       },
       mappings = {
+        synchronize = "w",
         go_out = "",
         go_out_plus = "h",
         go_in = "",

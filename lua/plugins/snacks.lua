@@ -7,12 +7,68 @@ return {
     picker = {
       enabled = true,
       sources = {
-        explorer = {
-          auto_close = true,
+        files = {
           hidden = true,
           ignored = true,
-          exclude = { ".git/*", "node_modules/*", ".venv/*", "**/__pycache__/*", "build/*", ".DS_Store" },
+          exclude = {
+            ".git/*",
+            "node_modules/*",
+            ".venv/*",
+            "**/__pycache__/*",
+            "build/*",
+            ".DS_Store",
+            ".rumdl_cache/*",
+          },
         },
+      },
+    },
+
+    dashboard = {
+      enabled = true,
+      preset = {
+        header = [[
+      ___           ___           ___         ___                 
+     /  /\         /  /\         /  /\       /  /\          ___   
+    /  /::\       /  /::\       /  /:/_     /  /::\        /__/|  
+   /  /:/\:\     /  /:/\:\     /  /:/ /\   /  /:/\:\      |  |:|  
+  /  /:/~/:/    /  /:/~/::\   /  /:/ /:/  /  /:/~/::\     |  |:|  
+ /__/:/ /:/___ /__/:/ /:/\:\ /__/:/ /:/  /__/:/ /:/\:\  __|__|:|  
+ \  \:\/:::::/ \  \:\/:/__\/ \  \:\/:/   \  \:\/:/__\/ /__/::::\  
+  \  \::/~~~~   \  \::/       \  \::/     \  \::/         ~\~~\:\ 
+   \  \:\        \  \:\        \  \:\      \  \:\           \  \:\
+    \  \:\        \  \:\        \  \:\      \  \:\           \__\/
+     \__\/         \__\/         \__\/       \__\/                
+        ]],
+        keys = {
+          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          {
+            icon = " ",
+            key = "n",
+            desc = "Config",
+            action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+          },
+          { icon = "󰒲 ", key = "l", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
+          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        },
+      },
+      sections = {
+        { section = "header" },
+        { icon = " ", title = "Keymaps", section = "keys", indent = 2, padding = 1 },
+        {
+          icon = " ",
+          title = "Git Status",
+          section = "terminal",
+          enabled = function()
+            return Snacks.git.get_root() ~= nil
+          end,
+          cmd = "git status --short --branch --renames",
+          height = 5,
+          padding = 1,
+          ttl = 5 * 60,
+          indent = 3,
+        },
+        { section = "startup" },
       },
     },
     lazygit = { enabled = true },
