@@ -2,6 +2,9 @@ return {
   "folke/snacks.nvim",
   priority = 1000,
   lazy = false,
+  dependencies = {
+    "nvim-mini/mini.files",
+  },
   ---@type snacks.Config
   opts = {
     picker = {
@@ -40,11 +43,21 @@ return {
      \__\/         \__\/         \__\/       \__\/                
         ]],
         keys = {
-          { icon = " ", key = "f", desc = "Find File", action = ":lua Snacks.dashboard.pick('files')" },
-          { icon = " ", key = "/", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "f", desc = "File Search", action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "/", desc = "Grep Search", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = "", key = "e", desc = "Explorer", action = ":lua MiniFiles.open()" },
+          {
+            icon = " ",
+            key = "t",
+            desc = "Terminal",
+            action = function()
+              vim.cmd.vnew()
+              vim.cmd.terminal()
+            end,
+          },
           {
             icon = " ",
-            key = "n",
+            key = "c",
             desc = "Config",
             action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
           },
