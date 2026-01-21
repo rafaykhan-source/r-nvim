@@ -21,6 +21,7 @@ return {
             "build/*",
             ".DS_Store",
             ".rumdl_cache/*",
+            ".ruff_cache/*",
           },
         },
       },
