@@ -45,3 +45,17 @@ cargo install stylua
 # install shellcheck
 
 ```
+
+## Todo
+
+- [x] Rename plugin file names to match plugin being handles
+- [x] Consolidate colorscheme plugins into a `colorscheme.lua` file
+- [ ] Remove lspconfig and self-configure and add a `lsp` directory
+- [ ] Add typst support
+- [ ] Add GitSigns
+- [ ] Add BigFile
+- [ ] Add Neogen for autodocstring support
+
+When nightly becomes stable:
+
+- [ ] Switch to packer, create packer version
