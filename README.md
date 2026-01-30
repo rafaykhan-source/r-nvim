@@ -50,7 +50,7 @@ cargo install stylua
 
 - [x] Rename plugin file names to match plugin being handles
 - [x] Consolidate colorscheme plugins into a `colorscheme.lua` file
-- [ ] Add GitSigns
+- [x] Add GitSigns
 - [ ] Add BigFile
 - [ ] Remove lspconfig and self-configure and add a `lsp` directory
 - [ ] Add typst support

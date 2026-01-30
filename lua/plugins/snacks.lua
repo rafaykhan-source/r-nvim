@@ -89,6 +89,7 @@ return {
     gh = { enabled = true },
     image = { enabled = true },
     notifier = { enabled = true },
+    bigfile = { enabled = true },
   },
 
   keys = {
