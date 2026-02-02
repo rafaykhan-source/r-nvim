@@ -90,9 +90,18 @@ return {
     image = { enabled = true },
     notifier = { enabled = true },
     bigfile = { enabled = true },
+    gitbrowser = { enabled = true },
   },
 
   keys = {
+    {
+      "<leader>gb",
+      function()
+        Snacks.gitbrowse()
+      end,
+      desc = "Git Browse",
+      mode = { "n", "v" },
+    },
     {
       "<leader>f",
       function()
