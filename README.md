@@ -6,7 +6,7 @@ I developed this configuration as I was watching through tjdevries's
 ## Neovim Installation
 
 ```bash
-npm i -g tree-sitter-cli
+bun i -g tree-sitter-cli
 ```
 
 ## LSP Setup Commands
@@ -16,12 +16,11 @@ uv tool install ruff
 uv tool install ty
 uv tool install rumdl
 
-npm i -g svelte-language-server
-npm i -g @tailwindcss/language-server
-npm i -g @taplo/cli
-npm i -g vscode-langservers-extracted
-npm i -g typescript typescript-language-server
-npm i -g bash-language-server
+bun i -g svelte-language-server
+bun i -g @tailwindcss/language-server
+bun i -g vscode-langservers-extracted
+bun i -g typescript typescript-language-server
+bun i -g bash-language-server
 
 # install texlab
 # install marksman
@@ -35,9 +34,9 @@ uv tool install ruff
 uv tool install rumdl
 uv tool install codespell
 
-npm i -g @taplo/cli
-npm i -g prettierd
-npm i -g prettier
+bun i -g @taplo/cli
+bun i -g @fsouza/prettierd
+bun i -g prettier
 
 cargo install tex-fmt
 cargo install stylua
@@ -51,11 +50,11 @@ cargo install stylua
 - [x] Rename plugin file names to match plugin being handles
 - [x] Consolidate colorscheme plugins into a `colorscheme.lua` file
 - [x] Add GitSigns
-- [ ] Add BigFile
+- [x] Add BigFile
 - [ ] Remove lspconfig and self-configure and add a `lsp` directory
 - [ ] Add typst support
 - [ ] Add Neogen for autodocstring support
 
 When nightly becomes stable:
 
-- [ ] Switch to packer, create packer version
+- [ ] Switch to pack, create packer version
