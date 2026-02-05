@@ -10,16 +10,13 @@ return {
     -- Web Development
     vim.lsp.enable("ts_ls")
     vim.lsp.enable("eslint")
-    vim.lsp.enable("tailwindcss")
+    -- vim.lsp.enable("tailwindcss")
     vim.lsp.enable("svelte")
 
     -- Markdown & Latex
     vim.lsp.enable("marksman")
     vim.lsp.enable("rumdl")
     vim.lsp.enable("texlab")
-
-    -- Toml
-    vim.lsp.enable("taplo")
 
     -- Lua
     vim.lsp.config("lua_ls", {
